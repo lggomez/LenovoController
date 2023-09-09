@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LenovoController"
         mc:Ignorable="d"
         Title="Lenovo Controller" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" x:Name="mainWindow"
-        FontSize="14" Background="White" Foreground="Black">
+        FontSize="18" Background="White" Foreground="Black">
     <StackPanel Margin="15">
         <Grid>
             <Grid.RowDefinitions>
@@ -22,10 +22,10 @@
 
             <GroupBox Grid.Row="0" Grid.Column="0" Header="Battery mode" Margin="0,0,5,0" BorderBrush="Black">
                 <StackPanel Margin="5,5,20,5" Orientation="Vertical">
-                    <RadioButton Margin="0,0,0,5" x:Name="radioConservation" Content="Conservation"
+                    <RadioButton Margin="0,0,0,10" x:Name="radioConservation" Content="Charge to 60% (Protect battery health)"
                                  HorizontalAlignment="Left" VerticalAlignment="Top" Checked="radioBattery_Checked"
                                  VerticalContentAlignment="Center" Foreground="Black" />
-                    <RadioButton Margin="0,0,0,5" x:Name="radioNormalCharge" Content="Normal"
+                    <RadioButton Margin="0,0,0,10" x:Name="radioNormalCharge" Content="Normal"
                                  HorizontalAlignment="Left" VerticalAlignment="Top" Checked="radioBattery_Checked"
                                  VerticalContentAlignment="Center" Foreground="Black" />
                     <RadioButton Margin="0" x:Name="radioRapidCharge" Content="Rapid Charge" HorizontalAlignment="Left"
