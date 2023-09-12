@@ -19,7 +19,7 @@ namespace LenovoController
         {
             InitializeComponent();
 
-//            mainWindow.Title += $" v{AssemblyName.GetAssemblyName(Assembly.GetExecutingAssembly().Location).Version}";
+            //mainWindow.Title += $" v{AssemblyName.GetAssemblyName(Assembly.GetExecutingAssembly().Location).Version}";
             mainWindow.Title = "👀";
             _batteryButtons = new[] { radioConservation, radioNormalCharge, radioRapidCharge };
             Refresh();
