@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using LenovoController.Features;
-
-using System.Runtime.InteropServices;
-
 
 namespace LenovoController
 {
@@ -19,7 +15,6 @@ namespace LenovoController
         {
             InitializeComponent();
 
-            //mainWindow.Title += $" v{AssemblyName.GetAssemblyName(Assembly.GetExecutingAssembly().Location).Version}";
             mainWindow.Title = "👀";
             _batteryButtons = new[] { radioConservation, radioNormalCharge, radioRapidCharge };
             Refresh();
