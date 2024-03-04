@@ -1,11 +1,10 @@
-﻿using System;
-using Microsoft.Win32.SafeHandles;
+﻿using Microsoft.Win32.SafeHandles;
 
 namespace LenovoController.Providers
 {
     public static class DriverProvider
     {
-        private static SafeFileHandle _energyDriver;
+        private static SafeFileHandle? _energyDriver;
 
         public static SafeFileHandle EnergyDriver
         {

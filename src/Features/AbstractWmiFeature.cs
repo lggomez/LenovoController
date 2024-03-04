@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Management;
+﻿using System.Management;
 
 namespace LenovoController.Features
 {
@@ -31,22 +29,26 @@ namespace LenovoController.Features
 
         private int ToInternal(T state)
         {
-            return (int) (object) state + _offset;
+            return (int)(object)state + _offset;
         }
 
         private T FromInternal(int state)
         {
-            return (T) (object) (state - _offset);
+            return (T)(object)(state - _offset);
         }
 
         private static int ExecuteGamezone(string methodName, string resultPropertyName,
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
             Dictionary<string, string> methodParams = null)
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
         {
             return Execute("SELECT * FROM LENOVO_GAMEZONE_DATA", methodName, resultPropertyName, methodParams);
         }
 
         private static int Execute(string queryString, string methodName, string resultPropertyName,
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
             Dictionary<string, string> methodParams = null)
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
         {
             var scope = new ManagementScope("ROOT\\WMI");
             scope.Connect();
@@ -55,7 +57,7 @@ namespace LenovoController.Features
             {
                 if (!enumerator.MoveNext())
                     throw new Exception("No results in query");
-                var mo = (ManagementObject) enumerator.Current;
+                var mo = (ManagementObject)enumerator.Current;
                 var methodParamsObject = mo.GetMethodParameters(methodName);
                 if (methodParams != null)
                     foreach (var pair in methodParams)

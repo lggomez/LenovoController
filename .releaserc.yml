@@ -8,11 +8,11 @@ plugins:
     - "@google/semantic-release-replace-plugin"
     - replacements:
         - files:
-            - source/Properties/AssemblyInfo.cs
+            - src/Properties/AssemblyInfo.cs
           from: '\[assembly: AssemblyVersion\(".+"\)\]'
           to: '[assembly: AssemblyVersion("${nextRelease.version}")]'
           results:
-            - file: source/Properties/AssemblyInfo.cs
+            - file: src/Properties/AssemblyInfo.cs
               hasChanged: true
               numMatches: 1
               numReplacements: 1
@@ -21,7 +21,7 @@ plugins:
   - #
     - "@semantic-release/git"
     - assets:
-        - source/Properties/AssemblyInfo.cs
+        - src/Properties/AssemblyInfo.cs
       message: "chore(release): ${nextRelease.version} [skip ci]"
 
   - #

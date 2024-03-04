@@ -1,5 +1,4 @@
-﻿using System;
-using LenovoController.Providers;
+﻿using LenovoController.Providers;
 
 namespace LenovoController.Features
 {
@@ -27,19 +26,19 @@ namespace LenovoController.Features
             {
                 case BatteryState.Conservation:
                     if (LastState == BatteryState.RapidCharge)
-                        return new byte[] {0x8, 0x3};
+                        return new byte[] { 0x8, 0x3 };
                     else
-                        return new byte[] {0x3};
+                        return new byte[] { 0x3 };
                 case BatteryState.Normal:
                     if (LastState == BatteryState.Conservation)
-                        return new byte[] {0x5};
+                        return new byte[] { 0x5 };
                     else
-                        return new byte[] {0x8};
+                        return new byte[] { 0x8 };
                 case BatteryState.RapidCharge:
                     if (LastState == BatteryState.Conservation)
-                        return new byte[] {0x5, 0x7};
+                        return new byte[] { 0x5, 0x7 };
                     else
-                        return new byte[] {0x7};
+                        return new byte[] { 0x7 };
                 default:
                     throw new Exception("Invalid state");
             }
